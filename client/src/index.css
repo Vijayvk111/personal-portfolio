@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  /* Custom futuristic colors */
+  --space: hsl(240, 49%, 9%);
+  --navy: hsl(234, 39%, 14%);
+  --neon-cyan: hsl(186, 100%, 50%);
+  --neon-pink: hsl(326, 100%, 50%);
+  --electric-purple: hsl(258, 89%, 66%);
+  --neon-green: hsl(158, 100%, 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-inter antialiased bg-background text-foreground overflow-x-hidden;
+    background: hsl(240, 49%, 9%);
+    color: hsl(210, 17%, 89%);
+  }
+}
+
+@layer components {
+  .font-orbitron {
+    font-family: 'Orbitron', monospace;
+  }
+  
+  .font-rajdhani {
+    font-family: 'Rajdhani', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .text-space {
+    color: hsl(240, 49%, 9%);
+  }
+  
+  .text-navy {
+    color: hsl(234, 39%, 14%);
+  }
+  
+  .text-neon-cyan {
+    color: hsl(186, 100%, 50%);
+  }
+  
+  .text-neon-pink {
+    color: hsl(326, 100%, 50%);
+  }
+  
+  .text-electric-purple {
+    color: hsl(258, 89%, 66%);
+  }
+  
+  .text-neon-green {
+    color: hsl(158, 100%, 50%);
+  }
+  
+  .bg-space {
+    background-color: hsl(240, 49%, 9%);
+  }
+  
+  .bg-navy {
+    background-color: hsl(234, 39%, 14%);
+  }
+  
+  .bg-neon-cyan {
+    background-color: hsl(186, 100%, 50%);
+  }
+  
+  .bg-neon-pink {
+    background-color: hsl(326, 100%, 50%);
+  }
+  
+  .bg-electric-purple {
+    background-color: hsl(258, 89%, 66%);
+  }
+  
+  .bg-neon-green {
+    background-color: hsl(158, 100%, 50%);
+  }
+  
+  .border-neon-cyan {
+    border-color: hsl(186, 100%, 50%);
+  }
+  
+  .border-neon-pink {
+    border-color: hsl(326, 100%, 50%);
+  }
+  
+  .border-electric-purple {
+    border-color: hsl(258, 89%, 66%);
+  }
+  
+  .border-neon-green {
+    border-color: hsl(158, 100%, 50%);
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes glow {
+    from { 
+      box-shadow: 0 0 20px hsl(186, 100%, 50%);
+    }
+    to { 
+      box-shadow: 0 0 30px hsl(186, 100%, 50%), 0 0 40px hsl(186, 100%, 50%);
+    }
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(186, 100%, 50%); }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-typing {
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .animate-slideInRight {
+    animation: slideInRight 0.8s ease-out;
+  }
+  
+  .typing-text {
+    overflow: hidden;
+    border-right: 3px solid hsl(186, 100%, 50%);
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  .glass-morphism {
+    background: hsla(234, 39%, 14%, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsla(186, 100%, 50%, 0.2);
+  }
+  
+  .glow-border {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: linear-gradient(45deg, hsl(186, 100%, 50%), hsl(326, 100%, 50%), hsl(258, 89%, 66%), hsl(158, 100%, 50%));
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: subtract;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  
+  .skill-bar {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skill-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsla(186, 100%, 50%, 0.4), transparent);
+    animation: shimmer 2s infinite;
+  }
+  
+  .project-card {
+    perspective: 1000px;
+  }
+  
+  .project-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .project-card:hover .project-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .project-card-front, .project-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+  }
+  
+  .project-card-back {
+    transform: rotateY(180deg);
+  }
+}
