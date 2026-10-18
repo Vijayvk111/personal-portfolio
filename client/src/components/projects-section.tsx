@@ -1,4 +1,4 @@
-import { Rocket, Brain, Headset, ExternalLink, BarChart3, PieChart } from "lucide-react";
+import { Rocket, Brain, Headset, ExternalLink, BarChart3, PieChart, Leaf } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 interface ProjectCardProps {
@@ -92,6 +92,17 @@ export default function ProjectsSection() {
       gradientTo: "to-electric-purple",
       githubUrl: "https://github.com/Vijayvk111/RoadHazeX",
       liveUrl: "https://roadhazex.web.app"
+    },
+    {
+      icon: <Leaf size={96} />,
+      title: "Crop Variety Classification",
+      description: "Deep learning model classifying 20 crop varieties across rice, pistachio & grapevine leaf images",
+      longDescription: "Built a multi-class deep learning model to identify 20 crop varieties across rice, pistachio, and grapevine leaf images, trained on 6,400+ images. Implemented transfer learning with timm backbones, Stratified K-Fold cross-validation, WeightedRandomSampler, and Cosine Annealing scheduler. Placed 3rd in the PALS TurboTech Build Hackathon on Kaggle.",
+      technologies: ["PyTorch", "Torchvision", "timm", "OpenCV", "Scikit-Learn", "Deep Learning"],
+      iconColor: "text-neon-green",
+      gradientFrom: "from-neon-green",
+      gradientTo: "to-electric-purple",
+      githubUrl: "https://github.com/Vijayvk111/Rice_Classification"
     },
     {
       icon: <Rocket size={96} />,
