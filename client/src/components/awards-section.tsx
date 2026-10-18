@@ -14,17 +14,30 @@ function AwardCard({ title, date, issuer, description, icon, mediaUrl, color }: 
   return (
     <div className={`glass-morphism rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:scale-[1.02] border border-${color}/20 hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] group`}>
       {/* Media Section */}
-      <div className={`relative h-48 w-full bg-navy/60 border-b border-${color}/20 overflow-hidden flex items-center justify-center`}>
+      <div className={`relative h-52 w-full bg-navy/80 border-b border-${color}/20 overflow-hidden flex items-center justify-center`}>
         {mediaUrl ? (
-          <img 
-            src={mediaUrl} 
-            alt={title} 
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
+          <a 
+            href={mediaUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="w-full h-full flex items-center justify-center relative cursor-pointer group/award block"
+            title="Click to view full certificate"
+          >
+            <img 
+              src={mediaUrl} 
+              alt={title} 
+              className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover/award:scale-105"
+            />
+            <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover/award:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span className="text-neon-cyan font-rajdhani text-xs font-bold bg-navy/90 px-3 py-1.5 rounded-lg border border-neon-cyan shadow-lg">
+                View Certificate ↗
+              </span>
+            </div>
+          </a>
         ) : (
-          <div className="flex flex-col items-center justify-center text-gray-500 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="flex flex-col items-center justify-center text-gray-500 opacity-60 group-hover:opacity-100 transition-opacity duration-300 p-4 text-center">
             <ImageIcon size={40} className={`mb-2 text-${color}`} />
-            <span className="font-rajdhani text-sm">Add Certificate/Image</span>
+            <span className="font-rajdhani text-sm text-gray-400">Certificate Pending</span>
           </div>
         )}
         
@@ -70,7 +83,7 @@ export default function AwardsSection() {
       description: "Selected among 270+ ideas, received prototype development funding, and showcased our AI-based mobility solution at the MInT Mobility Summit 2026, competing alongside students, startups, and industry professionals.",
       icon: <Trophy size={24} />,
       color: "neon-cyan",
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/mintathon.jpg`
     },
     {
       title: "Achievers Award",
@@ -78,7 +91,7 @@ export default function AwardsSection() {
       issuer: "Alpha College of Engineering",
       icon: <AwardIcon size={24} />,
       color: "electric-purple",
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/achievers-award.png`
     },
     {
       title: "3rd Place Winner - PALS Think2Impact",
@@ -86,7 +99,7 @@ export default function AwardsSection() {
       issuer: "Industry Problem Solving Workshop, PALS",
       icon: <Medal size={24} />,
       color: "neon-pink",
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/pals-think2impact.png`
     },
     {
       title: "Academic Topper (2nd Rank)",
@@ -95,7 +108,7 @@ export default function AwardsSection() {
       description: "Academic Topper award for securing Second Rank in Anna University Examination during odd semester of academic year 2024-2025.",
       icon: <AwardIcon size={24} />,
       color: "neon-green",
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/academic-topper-2.jpg`
     },
     {
       title: "Winner of PALS TurboTech Build Hackathon",
@@ -104,7 +117,7 @@ export default function AwardsSection() {
       description: "Secured 3rd place in PALS TurboTech Build Hackathon on Kaggle Platform. The Challenge involved a classification task to identify crop varieties such as Rice, Pistachio & Grapevine leaves using a deep learning model.",
       icon: <Trophy size={24} />,
       color: "neon-cyan",
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/pals-turbotech.jpg`
     },
     {
       title: "Finalist - CED AU Student Startify Hackathon",
@@ -122,7 +135,7 @@ export default function AwardsSection() {
       description: "Academic Topper award for securing Fourth Rank in Anna University Examination during odd semester of academic year 2023-2024.",
       icon: <AwardIcon size={24} />,
       color: "neon-pink",
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/academic-topper-4.jpg`
     }
   ];
 

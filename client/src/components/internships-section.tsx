@@ -21,23 +21,30 @@ function InternshipCard({
     <div className="glass-morphism rounded-xl overflow-hidden mb-10 transition-transform duration-300 hover:scale-[1.02] border border-neon-cyan/20 glow-border">
       <div className="flex flex-col md:flex-row">
         {/* Media/Certificate Section */}
-        <div className="md:w-1/3 p-6 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-neon-cyan/20 bg-navy/50 relative overflow-hidden group">
+        <div className="md:w-1/3 p-4 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-neon-cyan/20 bg-navy/60 relative overflow-hidden group">
           {mediaUrl ? (
-            <div className="relative w-full h-full min-h-[200px] rounded-lg overflow-hidden border border-electric-purple/50">
-              {/* If it's an image */}
+            <a 
+              href={mediaUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="relative w-full h-full min-h-[220px] max-h-[280px] rounded-lg overflow-hidden border border-electric-purple/50 bg-navy/90 flex items-center justify-center cursor-pointer group/cert block"
+              title="Click to view full certificate"
+            >
               <img 
                 src={mediaUrl} 
-                alt={`${company} Certificate/Media`} 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt={`${company} Certificate`} 
+                className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover/cert:scale-105"
               />
-              <div className="absolute inset-0 bg-navy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-neon-cyan font-rajdhani font-bold bg-navy/80 px-4 py-2 rounded-lg border border-neon-cyan">View Media</span>
+              <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover/cert:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-neon-cyan font-rajdhani text-sm font-bold bg-navy/90 px-3 py-1.5 rounded-lg border border-neon-cyan shadow-lg">
+                  View Certificate ↗
+                </span>
               </div>
-            </div>
+            </a>
           ) : (
-            <div className="w-full h-full min-h-[200px] rounded-lg border-2 border-dashed border-neon-pink/30 flex flex-col items-center justify-center text-gray-400 gap-3">
+            <div className="w-full h-full min-h-[200px] rounded-lg border-2 border-dashed border-neon-pink/30 flex flex-col items-center justify-center text-gray-400 gap-3 p-4 text-center">
               <Award size={48} className="text-neon-pink/50" />
-              <span className="font-rajdhani text-sm">Certificate Placeholder</span>
+              <span className="font-rajdhani text-sm text-gray-400">Certificate Pending</span>
             </div>
           )}
         </div>
@@ -94,7 +101,7 @@ export default function InternshipsSection() {
       duration: "05/2026 - 07/2026",
       description: "Completed a 6-week hands-on internship in 'Fundamentals of Switching & Routing,' earning Cisco CCNA certifications in Introduction to Networks and Switching, Routing, and Wireless Essentials. Architected enterprise network topologies in Cisco Packet Tracer, deploying Layer 2 and Layer 3 infrastructure with Inter-VLAN routing, EtherChannel (LACP), and dual-stack IPv4/IPv6 addressing. Configured Enterprise Wireless LAN Controllers (WLC) and static routing protocols to ensure optimal traffic flow and seamless DHCP delivery across segmented network environments.",
       skills: ["Cisco Packet Tracer", "Routing & Switching", "CCNA", "IPv4/IPv6", "VLAN", "WLC"],
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/cisco.jpg`
     },
     {
       title: "Python Development",
@@ -102,7 +109,7 @@ export default function InternshipsSection() {
       duration: "11/2025 - 01/2026",
       description: "Developed a real-time multi-user chat application using Python, TCP sockets, Tkinter, SQLite, and multithreading with features like typing indicators, emojis, and read receipts. Built an interactive Calendar & Reminder application using Python and Tkinter with reminders, popup notifications, holiday tracking, and JSON-based data storage. Developed a Weather application using Python with an interactive GUI for retrieving and displaying weather information.",
       skills: ["Python", "TCP sockets", "Tkinter", "SQLite", "Multithreading", "JSON", "GUI"],
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/pinnacle-python.jpg`
     },
     {
       title: "Software Development Internship",
@@ -118,7 +125,7 @@ export default function InternshipsSection() {
       duration: "05/2025 - 06/2025",
       description: "Developed and evaluated AI/ML models for classification and prediction tasks using Python-based workflows. Applied data cleaning, preprocessing, and feature engineering with Pandas and Scikit-learn to prepare datasets for modelling. Explored TensorFlow and OpenAI tools to support AI-driven solutions and prompt-based automation.",
       skills: ["AI/ML Models", "Python", "Pandas", "Scikit-learn", "TensorFlow", "OpenAI"],
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/rinex-ai.jpg`
     },
     {
       title: "Cloud-Computing Internship",
@@ -126,7 +133,7 @@ export default function InternshipsSection() {
       duration: "04/2025 - 05/2025",
       description: "Worked with cloud platforms and assisted in deploying and managing applications on cloud infrastructure. Configured cloud services including AWS Lambda while exploring cloud-based application workflows. Applied practices related to cloud security, monitoring, and cost optimisation during deployment activities.",
       skills: ["Cloud Platforms", "AWS Lambda", "Cloud Security", "Monitoring", "Cost Optimisation"],
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/pinnacle-cloud.jpg`
     },
     {
       title: "Machine Learning Internship",
@@ -134,7 +141,7 @@ export default function InternshipsSection() {
       duration: "03/2025 - 05/2025",
       description: "Built and evaluated machine learning models on real-world datasets using Python, Scikit-learn, Pandas, and Matplotlib. Performed data preprocessing and feature selection, followed by model evaluation and performance tuning. Collaborated with team members to analyse model results, communicate insights, and improve predictive performance.",
       skills: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "Data Preprocessing", "Feature Selection"],
-      mediaUrl: undefined
+      mediaUrl: `${import.meta.env.BASE_URL}certificates/rinex-ml.jpg`
     }
   ];
 
